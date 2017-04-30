@@ -43,7 +43,7 @@ rm -rf temp_dir
 # Call the ros-install script here
 echo "Installing ROS"
 sudo chmod +x ros_install.sh
-sudo bash ros_install.sh
+bash ros_install.sh
 
 cd $workspace_dir
 source "/opt/ros/jade/setup.bash"
