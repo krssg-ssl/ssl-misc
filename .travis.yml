@@ -3,12 +3,11 @@ matrix:
     - os: linux
       dist: trusty
 
-language : cpp
+language : generic
 
 compiler : gcc
 
 install:
-  - cd ../ssl-misc
   - sudo chmod +x install.sh
   - user_=$USER
   - bash install.sh "/home/$user_"
