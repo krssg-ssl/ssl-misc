@@ -9,6 +9,7 @@ fi
 workspace_dir=$1
 
 echo "Installing Dependencies"
+sudo apt-get update
 sudo apt-get install build-essential
 sudo apt-get install g++-4.9 cmake qt5-default libqt5svg5-dev libprotobuf-dev protobuf-compiler libode-dev screen
 
