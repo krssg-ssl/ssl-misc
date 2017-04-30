@@ -25,7 +25,7 @@ mkdir build && cd build
 # cmake ..
 # make -j8
 # sudo make install
-cd ../..
+cd ../../../
 rm -rf temp_dir
 
 # Install latest cmake
@@ -37,7 +37,7 @@ cd cmake-3.8.0
 # ./configure
 # make -j8
 # sudo make install
-cd ../../../
+cd ../../
 rm -rf temp_dir
 
 # Call the ros-install script here
