@@ -11,7 +11,9 @@ language : cpp
 compiler : gcc
 
 install:
-  - sudo ../ssl-misc/install.sh
+  - cd ../ssl-misc
+  - chmod +x install.sh
+  - sudo bash install.sh "~/"
 
 script:
   - catkin_make krssg_ssl_msgs
