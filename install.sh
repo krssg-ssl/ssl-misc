@@ -4,7 +4,7 @@ if [ "$#" -ne 1 ]; then
   echo "usage: ./install.sh <path-to-installation>"
   exit
 fi
-# Call the ros-install script here
+
 # Install dependencies
 workspace_dir=$1
 
@@ -23,7 +23,7 @@ sudo make install
 cd ../..
 rm -rf temp_dir
 
-# Install ros
+# Call the ros-install script here
 echo "Installing ROS"
 bash ./ros_install.sh
 
