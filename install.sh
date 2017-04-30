@@ -48,7 +48,7 @@ sudo bash ros_install.sh
 cd $workspace_dir
 source "/opt/ros/jade/setup.bash"
 
-if [! -d catkin_ws/src]; then
+if [ ! -d catkin_ws/src ]; then
 	mkdir -p catkin_ws/src
 fi
 cd catkin_ws/src
@@ -57,7 +57,7 @@ cd ..
 catkin_make
 
 source "devel/setup.bash"
-cd src
+cd src/
 
 # clone all the repositories
 git clone https://github.com/krssg-ssl/robojackets.git
