@@ -1,0 +1,17 @@
+sudo : required
+
+os : linux
+
+language : cpp
+
+compiler : gcc
+
+install:
+  - sudo ../ssl-misc/install.sh
+
+script:
+  - catkin_make krssg_ssl_msgs
+  - catkin_make
+
+notifications:
+    email: false
