@@ -44,7 +44,7 @@ echo "Installing ROS"
 sudo chmod +x ros_install.sh
 sudo bash ros_install.sh
 
-cd $workspace_dir
+cd /home/$USER
 rosv=`rosversion -d`
 source "/opt/ros/$rosv/setup.bash"
 
