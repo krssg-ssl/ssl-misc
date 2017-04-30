@@ -46,8 +46,7 @@ sudo chmod +x ros_install.sh
 sudo bash ros_install.sh
 
 cd $workspace_dir
-rosv=`rosversion -d`
-source "/opt/ros/$rosv/setup.bash"
+source "/opt/ros/jade/setup.bash"
 
 if [! -d catkin_ws/src]; then
 	mkdir -p catkin_ws/src
