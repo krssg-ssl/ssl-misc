@@ -2,15 +2,14 @@ matrix:
   include:
     - os: linux
       dist: trusty
-      sudo: required
 
 language : cpp
 
 compiler : gcc
 
 install:
-  - chmod +x install.sh
-  - sudo bash install.sh "/home/travis"
+  - sudo chmod +x install.sh
+  - bash install.sh "/home/travis"
 
 script:
   - catkin_make krssg_ssl_msgs
