@@ -9,10 +9,10 @@ language : cpp
 compiler : gcc
 
 install:
-  - pwd
+
 
 script:
-
+  - pwd
 
 notifications:
     email: false
