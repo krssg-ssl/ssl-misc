@@ -9,10 +9,12 @@ language : cpp
 compiler : gcc
 
 install:
-
+  - user_=$USER
+  - chmod +x install.sh
+  - sudo bash install.sh "/home/$user_"
 
 script:
-  - pwd
-
+  - catkin_make krssg_ssl_msgs
+  - catkin_make
 notifications:
     email: false
