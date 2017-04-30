@@ -9,10 +9,10 @@ fi
 workspace_dir=$1
 
 echo "Installing Dependencies"
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 sudo apt-get update
-sudo apt-get install g++-4.9
-sudo apt-get install cmake qt5-default libqt5svg5-dev libprotobuf-dev protobuf-compiler libode-dev screen
+sudo apt-get install -y g++-4.9
+sudo apt-get install -y cmake qt5-default libqt5svg5-dev libprotobuf-dev protobuf-compiler libode-dev screen
 
 mkdir temp_dir && cd temp_dir
 wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/vartypes/vartypes-0.7.tar.gz
@@ -21,6 +21,18 @@ cd vartypes-0.7
 mkdir build && cd build
 cmake ..
 make 
+sudo make install
+cd ../..
+rm -rf temp_dir
+
+# Install latest cmake
+echo "Installing latest cmake"
+mkdir temp_dir && cd temp_dir
+wget http://www.cmake.org/files/v3.2/cmake-3.2.2.tar.gz
+tar xf cmake-3.2.2.tar.gz
+cd cmake-3.2.2
+./configure
+make
 sudo make install
 cd ../..
 rm -rf temp_dir
