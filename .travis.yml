@@ -2,7 +2,6 @@ matrix:
   include:
     - os: linux
       dist: trusty
-      sudo: required
 
 language : cpp
 
@@ -10,15 +9,15 @@ compiler : gcc
 
 install:
   - cd ../ssl-misc
-  - chmod +x install.sh
+  - sudo chmod +x install.sh
   - user_=$USER
-  - sudo bash install.sh "/home/$user_"
+  - bash install.sh "/home/$user_"
 
 script:
   - source /opt/ros/jade/setup.bash
   - cd /home/$user_/catkin_ws/
-  - sudo catkin_make krssg_ssl_msgs
-  - sudo catkin_make
+  - catkin_make krssg_ssl_msgs
+  - catkin_make
 
 notifications:
     email: false
