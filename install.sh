@@ -10,9 +10,11 @@ workspace_dir=$1
 
 echo "Installing Dependencies"
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-sudo apt-get update
+sudo apt-get -y update
 sudo apt-get install -y g++-4.9
-sudo apt-get install -y cmake qt5-default libqt5svg5-dev libprotobuf-dev protobuf-compiler libode-dev screen
+echo "Installing latest qt5"
+sudo apt-get install -y qt5-default
+sudo apt-get install -y cmake libqt5svg5-dev libprotobuf-dev protobuf-compiler libode-dev screen
 
 mkdir temp_dir && cd temp_dir
 wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/vartypes/vartypes-0.7.tar.gz
@@ -20,7 +22,7 @@ tar xfz vartypes-0.7.tar.gz
 cd vartypes-0.7
 mkdir build && cd build
 cmake ..
-make 
+make -j8
 sudo make install
 cd ../..
 rm -rf temp_dir
@@ -28,18 +30,19 @@ rm -rf temp_dir
 # Install latest cmake
 echo "Installing latest cmake"
 mkdir temp_dir && cd temp_dir
-wget http://www.cmake.org/files/v3.2/cmake-3.2.2.tar.gz
-tar xf cmake-3.2.2.tar.gz
-cd cmake-3.2.2
+wget https://cmake.org/files/v3.8/cmake-3.8.0.tar.gz
+tar xf cmake-3.8.0.tar.gz
+cd cmake-3.8.0
 ./configure
-make
+make -j8
 sudo make install
 cd ../..
 rm -rf temp_dir
 
 # Call the ros-install script here
 echo "Installing ROS"
-bash ./ros_install.sh
+sudo chmod +x ros_install.sh
+sudo bash ros_install.sh
 
 cd $workspace_dir
 rosv=`rosversion -d`
