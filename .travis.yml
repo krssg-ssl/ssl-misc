@@ -10,10 +10,11 @@ compiler : gcc
 
 install:
   - chmod +x install.sh
-  - sudo bash install.sh
+  - sudo bash install.sh "\home\travis"
 
 script:
   - catkin_make krssg_ssl_msgs
   - catkin_make
+
 notifications:
     email: false
