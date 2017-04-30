@@ -16,6 +16,7 @@ script:
   - source /opt/ros/jade/setup.bash
   - cd /home/$user_/catkin_ws/
   - catkin_make --pkg krssg_ssl_msgs
+  - catkin_make --pkg ssl_common
   - catkin_make
 
 notifications:
