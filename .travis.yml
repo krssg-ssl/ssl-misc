@@ -9,13 +9,8 @@ language : cpp
 compiler : gcc
 
 install:
-  - cd ../ssl-misc
-  - chmod +x install.sh
-  - user_=$USER
-  - sudo bash install.sh "/home/$user_"
-
-script:
-  - source /opt/ros/jade/setup.bash 
+  - sudo chmod +x install.sh
+  - bash install.sh "/home/travis"
   - catkin_make krssg_ssl_msgs
   - catkin_make
 
