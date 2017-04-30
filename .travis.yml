@@ -1,13 +1,17 @@
 sudo : required
 
-os : linux
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+      sudo: required
 
 language : cpp
 
 compiler : gcc
 
 install:
-  - sudo ../ssl-misc/install.sh
+  - sudo ../ssl-misc/install.sh ~/
 
 script:
   - catkin_make krssg_ssl_msgs
