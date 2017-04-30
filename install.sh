@@ -40,7 +40,6 @@ cd ..
 catkin_make
 
 source "devel/setup.bash"
-
 cd src
 
 # clone all the repositories
