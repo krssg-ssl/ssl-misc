@@ -1,4 +1,5 @@
 #! /bin/bash
+
 set -e
 if [ "$#" -ne 1 ]; then
   echo "usage: ./install.sh <path-to-installation>"
@@ -44,7 +45,7 @@ echo "Installing ROS"
 sudo chmod +x ros_install.sh
 sudo bash ros_install.sh
 
-cd /home/$USER
+cd $workspace_dir
 rosv=`rosversion -d`
 source "/opt/ros/$rosv/setup.bash"
 
