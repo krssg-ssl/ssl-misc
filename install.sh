@@ -13,12 +13,7 @@ echo "Installing Dependencies"
 sudo apt-get -qq install -y build-essential
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 sudo apt-get -qq -y update
-sudo apt-get -qq install -y g++-4.9 gcc-4.9 cpp-4.9
-cd /usr/bin
-rm gcc g++ cpp
-ln -s gcc-4.9 gcc
-ln -s g++-4.9 g++
-ln -s cpp-4.9 cpp
+sudo apt-get -qq install -y g++-4.9
 echo "Installing latest qt5"
 sudo apt-get -qq install -y qt5-default
 sudo apt-get -qq install -y cmake libqt5svg5-dev libprotobuf-dev protobuf-compiler libode-dev screen
