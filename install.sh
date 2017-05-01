@@ -10,6 +10,7 @@ fi
 workspace_dir=$1
 
 echo "Installing Dependencies"
+sudo apt-get -qq update
 sudo apt-get -qq install -y build-essential
 wget https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.bz2
 tar jxf gcc-4.9.4.tar.bz2
