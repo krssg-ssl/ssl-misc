@@ -12,7 +12,8 @@ install:
   - cd ssl-misc/
   - sudo chmod +x install.sh
   - dir_install=`pwd`
-  - bash install.sh $dir_install
+  - echo $dir_install
+  - bash install.sh "$dir_install"
 
 script:
   - source /opt/ros/jade/setup.bash
