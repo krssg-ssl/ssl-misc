@@ -13,6 +13,7 @@ install:
   - sudo chmod +x install.sh
   - dir_install=`pwd`
   - echo $dir_install
+  - gcc --version
   - bash install.sh "$dir_install"
 
 script:
