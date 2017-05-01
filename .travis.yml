@@ -11,11 +11,13 @@ install:
   - git clone https://github.com/krssg-ssl/ssl-misc
   - cd ssl-misc/
   - sudo chmod +x install.sh
-  - bash install.sh "/home/$USER"
+  - dir_install='pwd'
+  - bash install.sh $dir_install
 
 script:
   - source /opt/ros/jade/setup.bash
-  - cd /home/$USER/catkin_ws/
+  - dir_install='pwd'
+  - cd $dir_install/catkin_ws/
   - catkin_make --pkg krssg_ssl_msgs
   - catkin_make --pkg ssl_common
   - catkin_make
