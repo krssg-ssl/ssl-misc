@@ -10,7 +10,7 @@ fi
 workspace_dir=$1
 
 echo "Installing Dependencies"
-sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+#sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 sudo apt-get -qq -y update
 #sudo apt-get -qq install -y g++-4.9
 gcc --version
