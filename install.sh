@@ -11,9 +11,16 @@ workspace_dir=$1
 
 echo "Installing Dependencies"
 sudo apt-get -qq install -y build-essential
-sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-sudo apt-get -qq -y update
-sudo apt-get -qq install -y g++-4.9
+wget https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.bz2
+tar jxf gcc-4.9.4.tar.bz2
+cd gcc-4.9.4/
+sudo apt-get install libmpc-dev
+./configure --quiet --disable-multilib
+make --quiet -j8
+make install
+cd ..
+rm -rf gcc-4.9.4/
+
 echo "Installing latest qt5"
 sudo apt-get -qq install -y qt5-default
 sudo apt-get -qq install -y cmake libqt5svg5-dev libprotobuf-dev protobuf-compiler libode-dev screen
