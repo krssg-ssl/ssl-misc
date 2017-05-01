@@ -5,6 +5,11 @@ matrix:
 
 language : generic
 
+sources:
+  - ubuntu-toolchain-r-test
+packages:
+  - g++-4.9
+
 compiler : gcc
 
 install:
