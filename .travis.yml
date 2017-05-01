@@ -8,13 +8,14 @@ language : generic
 compiler : gcc
 
 install:
+  - git clone https://github.com/krssg-ssl/ssl-misc
+  - cd ssl-misc/
   - sudo chmod +x install.sh
-  - user_=$USER
-  - bash install.sh "/home/$user_"
+  - bash install.sh "/home/$USER"
 
 script:
   - source /opt/ros/jade/setup.bash
-  - cd /home/$user_/catkin_ws/
+  - cd /home/$USER/catkin_ws/
   - catkin_make --pkg krssg_ssl_msgs
   - catkin_make --pkg ssl_common
   - catkin_make
