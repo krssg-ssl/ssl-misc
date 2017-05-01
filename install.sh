@@ -12,13 +12,14 @@ workspace_dir=$1
 echo "Installing Dependencies"
 sudo apt-get -qq update
 sudo apt-get -qq install -y build-essential
+echo "Installing gcc and g++"
 wget https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.bz2
 tar jxf gcc-4.9.4.tar.bz2
 cd gcc-4.9.4/
 sudo apt-get install libmpc-dev
 ./configure --quiet --disable-multilib
 make --quiet -j8
-make install
+sudo make install
 cd ..
 rm -rf gcc-4.9.4/
 
