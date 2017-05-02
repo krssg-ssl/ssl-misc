@@ -10,21 +10,12 @@ fi
 workspace_dir=$1
 
 echo "Installing Dependencies"
-sudo apt-get -qq update
-echo "Installing gcc and g++"
-wget https://ftp.gnu.org/gnu/gcc/gcc-4.9.4/gcc-4.9.4.tar.bz2
-tar jxf gcc-4.9.4.tar.bz2
-cd gcc-4.9.4/
-sudo apt-get install libmpc-dev
-./configure --quiet --disable-multilib
-make --quiet -j8
-sudo make install
-cd ..
-rm -rf gcc-4.9.4/
-
+sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+sudo apt-get -y update
+sudo apt-get install -y g++-4.9
 echo "Installing latest qt5"
-sudo apt-get -qq install -y qt5-default
-sudo apt-get -qq install -y cmake libqt5svg5-dev libprotobuf-dev protobuf-compiler libode-dev screen
+sudo apt-get install -y qt5-default
+sudo apt-get install -y cmake libqt5svg5-dev libprotobuf-dev protobuf-compiler libode-dev screen
 
 mkdir temp_dir && cd temp_dir
 wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/vartypes/vartypes-0.7.tar.gz
