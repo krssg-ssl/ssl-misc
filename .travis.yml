@@ -5,6 +5,8 @@ matrix:
 
 language : cpp
 
+compiler : gcc
+
 install:
   - git clone https://github.com/krssg-ssl/ssl-misc
   - cd ssl-misc/
