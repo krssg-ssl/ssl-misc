@@ -83,6 +83,13 @@ git clone https://github.com/krssg-ssl/tactics_py.git
 git clone https://github.com/krssg-ssl/skills_py.git
 git clone https://github.com/krssg-ssl/ssl-misc.git
 
+WORKING_BRANCH=("skills_py" "tactics_py" "plays_py")
+
+for i in ${WORKING_BRANCH[@]}; do
+	cd $i
+	git checkout Working
+	cd ..
+done
 
 cd ..
 
