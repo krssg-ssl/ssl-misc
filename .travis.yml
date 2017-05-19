@@ -8,11 +8,12 @@ language : cpp
 compiler : gcc
 
 install:
-  - git clone https://github.com/krssg-ssl/ssl-misc
+  - cd ..
+  - if [ ! -d "ssl-misc" ]; then git clone https://github.com/krssg-ssl/ssl-misc; fi;
   - cd ssl-misc/
   - sudo chmod +x install.sh
   - dir_install=`pwd`
-  - echo $dir_install
+  - echo "***************************** $dir_install *****************"
   - bash install.sh "$dir_install"
 
 script:

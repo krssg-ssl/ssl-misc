@@ -12,7 +12,7 @@ workspace_dir=$1
 echo "Installing Dependencies"
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 sudo apt-get -y update
-sudo apt-get install -y g++-4.9
+sudo apt-get install -y "g++-4.9"
 echo "Installing latest qt5"
 sudo apt-get install -y qt5-default
 sudo apt-get install -y cmake libqt5svg5-dev libprotobuf-dev protobuf-compiler libode-dev screen
