@@ -62,7 +62,6 @@ cd src
 # clone all the repositories
 git clone https://github.com/krssg-ssl/robojackets.git
 git clone https://github.com/krssg-ssl/plays.git
-git clone https://github.com/krssg-ssl/ssl-vision.git
 git clone https://github.com/krssg-ssl/kgpkubs_launch.git
 git clone https://github.com/krssg-ssl/tactics.git
 git clone https://github.com/krssg-ssl/ssl_robot.git
