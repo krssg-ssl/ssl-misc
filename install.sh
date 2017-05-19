@@ -74,7 +74,15 @@ git clone https://github.com/krssg-ssl/skills.git
 git clone https://github.com/krssg-ssl/vision_comm.git
 git clone https://github.com/krssg-ssl/traj_controller.git
 git clone https://github.com/krssg-ssl/navigation.git
-git clone https://github.com/krssg-ssl/refBox.git
 git clone https://github.com/krssg-ssl/krssg_ssl_msgs.git
+git clone https://github.com/krssg-ssl/referee-box.git
+git clone https://github.com/krssg-ssl/navigation_py.git
+git clone https://github.com/krssg-ssl/tests_py.git
+git clone https://github.com/krssg-ssl/bot_comm.git
+git clone https://github.com/krssg-ssl/plays_py.git
+git clone https://github.com/krssg-ssl/tactics_py.git
+git clone https://github.com/krssg-ssl/skills_py.git
+git clone https://github.com/krssg-ssl/ssl-misc.git
+
 
 cd ..
