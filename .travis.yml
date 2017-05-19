@@ -17,6 +17,7 @@ install:
   - bash install.sh "/home/$USER"
 
 script:
+  - cd "/home/$USER/catkin_ws/"
   - catkin_make krssg_ssl_msgs
   - catkin_make
 
