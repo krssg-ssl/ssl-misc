@@ -11,7 +11,10 @@ workspace_dir=$1
 echo "Installing Dependencies"
 sudo apt-get --yes --force-yes update
 sudo apt-get --yes --force-yes install build-essential
-sudo apt-get --yes --force-yes install g++-4.9 cmake qt5-default libqt5svg5-dev libprotobuf-dev protobuf-compiler libode-dev screen
+sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+sudo apt-get --yes --force-yes update
+sudo apt-get --yes --force-yes install "g++-4.9"
+sudo apt-get --yes --force-yes install cmake qt5-default libqt5svg5-dev libprotobuf-dev protobuf-compiler libode-dev screen
 
 mkdir temp_dir && cd temp_dir
 wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/vartypes/vartypes-0.7.tar.gz
