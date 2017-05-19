@@ -22,13 +22,26 @@ tar xfz vartypes-0.7.tar.gz
 cd vartypes-0.7
 mkdir build && cd build
 cmake ..
-make 
+make --quiet -j8
 sudo make install
-cd ../..
+cd ../../../
+rm -rf temp_dir
+
+# Install latest cmake
+echo "Installing latest cmake"
+mkdir temp_dir && cd temp_dir
+wget https://cmake.org/files/v3.8/cmake-3.8.0.tar.gz
+tar xf cmake-3.8.0.tar.gz
+cd cmake-3.8.0
+./configure
+make --quiet -j8
+sudo make install
+cd ../../
 rm -rf temp_dir
 
 # Call the ros-install script here
 echo "Installing ROS"
+sudo chmod +x ros_install.sh
 bash ./ros_install.sh
 
 cd $workspace_dir
