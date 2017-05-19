@@ -10,15 +10,16 @@ language : generic
 compiler : gcc
 
 install:
+  
+
+script:
   - cd ..
   - if [ ! -d "ssl-misc" ]; then git clone https://github.com/krssg-ssl/ssl-misc; fi;
   - cd ssl-misc/
   - sudo chmod +x install.sh
   - bash install.sh "/home/$USER"
-
-script:
   - cd "/home/$USER/catkin_ws/"
-  - catkin_make krssg_ssl_msgs
+  - catkin_make --pkg krssg_ssl_msgs
   - catkin_make
 
 notifications:

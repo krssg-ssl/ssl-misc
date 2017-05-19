@@ -23,4 +23,3 @@ rosdep update
 echo "source /opt/ros/jade/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
-source /opt/ros/jade/setup.bash
