@@ -86,3 +86,9 @@ git clone https://github.com/krssg-ssl/ssl-misc.git
 
 
 cd ..
+
+catkin_make --pkg krssg_ssl_msgs
+catkin_make
+
+
+echo "FUCKING DONE!!!"

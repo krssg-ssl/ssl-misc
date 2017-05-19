@@ -18,9 +18,6 @@ script:
   - cd ssl-misc/
   - sudo chmod +x install.sh
   - bash install.sh "/home/$USER"
-  - cd "/home/$USER/catkin_ws/"
-  - catkin_make --pkg krssg_ssl_msgs
-  - catkin_make
 
 notifications:
     email: false
