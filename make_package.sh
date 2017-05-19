@@ -2,6 +2,8 @@
 
 #################################################################
 #								#
+#			KgpKubs - 2017				#
+#								#
 # Create a new ROS package with gitignore, travis and more	#
 # To use:							#
 # 		./make_package.sh <pkg_name> <pkg_type>		#

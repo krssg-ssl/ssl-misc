@@ -6,11 +6,10 @@
 		##################################################################
 
 ####################### For proxy 
-KGP_PROXY="10.3.100.207"
-KGP_PORT="8080"
-
-export http_proxy="http://$KGP_PROXY:$KGP_PORT"
-export https_proxy="https://$KGP_PROXY:$KGP_PORT"
+# KGP_PROXY="10.3.100.207"
+# KGP_PORT="8080"
+# export http_proxy="http://$KGP_PROXY:$KGP_PORT"
+# export https_proxy="https://$KGP_PROXY:$KGP_PORT"
 #######################
 
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
