@@ -56,7 +56,7 @@ repos=(robojackets plays kgpkubs_launch tactics ssl_robot
 	tests_py bot_comm plays_py tactics_py skills_py ssl-misc)
 
 for repo in ${repos[@]}; do
-	if [ ! -d repo ]; then
+	if [ ! -d $repo ]; then
 		git clone https://github.com/krssg-ssl/${repo}.git
 	fi
 done
