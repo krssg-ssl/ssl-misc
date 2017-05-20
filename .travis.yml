@@ -20,5 +20,6 @@ script:
   - sudo chmod +x install.sh
   - bash install.sh "/home/$USER/catkin_ws"
 
+
 notifications:
     email: false

@@ -61,7 +61,6 @@ for repo in ${repos[@]}; do
 	fi
 done
 
-
 WORKING_BRANCH=("skills_py" "tactics_py" "plays_py")
 
 for i in ${WORKING_BRANCH[@]}; do
