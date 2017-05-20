@@ -47,41 +47,19 @@ bash ros_install.sh
 cd $workspace_dir
 source "/opt/ros/jade/setup.bash"
 
-if [ ! -d catkin_ws/src ]; then
-	mkdir -p catkin_ws/src
-fi
-
-cd catkin_ws/src
-catkin_init_workspace
-cd ..
-catkin_make
-
-source "devel/setup.bash"
 cd src
 
 # clone all the repositories
-git clone https://github.com/krssg-ssl/robojackets.git
-git clone https://github.com/krssg-ssl/plays.git
-git clone https://github.com/krssg-ssl/kgpkubs_launch.git
-git clone https://github.com/krssg-ssl/tactics.git
-git clone https://github.com/krssg-ssl/ssl_robot.git
-git clone https://github.com/krssg-ssl/ssl_common.git
-git clone https://github.com/krssg-ssl/grsim_comm.git
-git clone https://github.com/krssg-ssl/grSim.git
-git clone https://github.com/krssg-ssl/belief_state.git
-git clone https://github.com/krssg-ssl/skills.git
-git clone https://github.com/krssg-ssl/vision_comm.git
-git clone https://github.com/krssg-ssl/traj_controller.git
-git clone https://github.com/krssg-ssl/navigation.git
-git clone https://github.com/krssg-ssl/krssg_ssl_msgs.git
-git clone https://github.com/krssg-ssl/referee-box.git
-git clone https://github.com/krssg-ssl/navigation_py.git
-git clone https://github.com/krssg-ssl/tests_py.git
-git clone https://github.com/krssg-ssl/bot_comm.git
-git clone https://github.com/krssg-ssl/plays_py.git
-git clone https://github.com/krssg-ssl/tactics_py.git
-git clone https://github.com/krssg-ssl/skills_py.git
-git clone https://github.com/krssg-ssl/ssl-misc.git
+repos=(robojackets plays kgpkubs_launch tactics ssl_robot 
+	ssl_common grsim_comm grSim belief_state skills vision_comm 
+	traj_controller navigation krssg_ssl_msgs referee-box navigation_py
+	tests_py bot_comm plays_py tactics_py skills_py ssl-misc)
+
+for repo in ${repos[@]}; do
+	if [ ! -d $repo ]; then
+		git clone https://github.com/krssg-ssl/${repo}.git
+	fi
+done
 
 WORKING_BRANCH=("skills_py" "tactics_py" "plays_py")
 
@@ -95,6 +73,3 @@ cd ..
 
 catkin_make --pkg krssg_ssl_msgs
 catkin_make
-
-
-echo "FUCKING DONE!!!"
