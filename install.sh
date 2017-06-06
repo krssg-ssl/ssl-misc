@@ -44,6 +44,12 @@ echo "Installing ROS"
 sudo chmod +x ros_install.sh
 bash ros_install.sh
 
+# Installing ompl library
+wget http://ompl.kavrakilab.org/install-ompl-ubuntu.sh
+chmod u+x install-ompl-ubuntu.sh
+./install-ompl-ubuntu.sh --python
+
+# Moving to the ROS workspace
 cd $workspace_dir
 source "/opt/ros/jade/setup.bash"
 
